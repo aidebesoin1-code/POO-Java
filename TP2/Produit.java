@@ -1,53 +1,62 @@
 public class Produit {
-    // Attributs
     private String reference;
     private String nom;
     private int prixUnitaire;
 
     // Constructeur
-    public Produit(String r, String n, int p) {
-        this.reference = r;
-        this.nom = n;
+    public Produit(String reference, String nom, int prixUnitaire) {
+        this.reference = reference;
+        this.nom = nom;
 
-        if (p < 0) {
+        if (prixUnitaire <= 0) {
             throw new IllegalArgumentException(
-                "Le prix unitaire ne peut pas être négatif"
+                "Le prix doit être strictement positif."
             );
         }
 
-        this.prixUnitaire = p;
+        this.prixUnitaire = prixUnitaire;
     }
 
-    // Getter référence
+    // Getter
     public String getReference() {
         return reference;
     }
 
-    // Setter référence
+    // Setter
     public void setReference(String reference) {
         this.reference = reference;
     }
 
-    // Getter nom
+    // Getter
     public String getNom() {
         return nom;
     }
 
-    // Setter nom
+    // Setter
     public void setNom(String nom) {
         this.nom = nom;
     }
 
-    // Getter prix unitaire
+    // Getter
     public int getPrixUnitaire() {
         return prixUnitaire;
     }
 
-    // Setter prix unitaire
+    // Setter
     public void setPrixUnitaire(int prixUnitaire) {
-        if (prixUnitaire < 0) {
-            throw new IllegalArgumentException("Le prix unitaire ne peut pas être négatif");
+        if (prixUnitaire <= 0) {
+            throw new IllegalArgumentException(
+                "Le prix doit être strictement positif."
+            );
         }
+
         this.prixUnitaire = prixUnitaire;
+    }
+
+    // Méthode afficher()
+    public void afficher() {
+        System.out.println("Référence : " + reference);
+        System.out.println("Nom : " + nom);
+        System.out.println("Prix unitaire : " + prixUnitaire + " €");
     }
 }
