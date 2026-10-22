@@ -13,7 +13,7 @@ public class Livraison {
         this.prixBase = pr;
     }
 
-    // getters et setters
+    // getters et setters 
     public int getNumero() {
         return numero;
     }
