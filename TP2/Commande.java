@@ -15,9 +15,6 @@ public class Commande {
         }
         this.produits = produits;
     }
-
-
-
     // mardiyath
     // getters et setters
     public int getNumero() {
