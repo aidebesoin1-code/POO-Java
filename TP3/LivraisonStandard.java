@@ -12,5 +12,9 @@ public class LivraisonStandard extends Livraison {
         + ", Destination: " + getDestination() + ", Poids: " + getPoids() + "kg, Prix Base: " + getPrixBase() + "€");
     }
 
+    @Override
+    public int calculerPrix() {
+        return prixBase * poids + 1; // Le prix est calculé en multipliant le prix de base par le poids
+    }
 
 }

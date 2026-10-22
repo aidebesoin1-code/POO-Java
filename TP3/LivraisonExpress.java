@@ -26,4 +26,9 @@ public class LivraisonExpress extends Livraison {
         + ", Destination: " + getDestination() + ", Poids: " + getPoids() + "kg, Prix Base: " + getPrixBase() + "€, Supplement Express: " + getSupplementExpress() + "€");
     }
 
+    @Override
+    public int calculerPrix() {
+        return (prixBase * poids) + setSupplementExpress; // Le prix est calculé en multipliant le prix de base par le poids
+    }
+
 }
