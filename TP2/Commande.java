@@ -12,7 +12,6 @@ public class Commande {
         this.date = date;
         if(produits == null) {
             throw new IllegalArgumentException("Le produit ne peut pas etre nul.");
-        }
-        
+        }     
     }
 }
