@@ -6,14 +6,14 @@ public class Livraison {
     private int prixBase;
 
     // constructeur
-    public Livraison(int n, String d, int p, int pr){
-        this.numero = n;
-        this.destination = d;
-        this.poids = p;
-        this.prixBase = pr;
+    public Livraison(int numero, String destination, int poids, int prixBase) {
+        this.numero = numero;
+        this.destination = destination;
+        this.poids = poids;
+        this.prixBase = prixBase;
     }
 
-    // getters et setters 
+    // getters
     public int getNumero() {
         return numero;
     }
@@ -30,6 +30,7 @@ public class Livraison {
         return prixBase;
     }
 
+    // setters
     public void setNumero(int numero) {
         this.numero = numero;
     }
@@ -48,12 +49,13 @@ public class Livraison {
 
     // méthode afficher()
     public void afficher() {
-        System.out.println("Livraison - Numéro: " + numero + ", Destination: " + destination + ", Poids: " + poids + "kg, Prix Base: " + prixBase + "€");
+        System.out.println("Livraison - Numéro: " + numero
+                + ", Destination: " + destination
+                + ", Poids: " + poids + "kg, Prix Base: " + prixBase + "€");
     }
 
-    // méthode calculerPrix()
+    // méthode calculerPrix() : prix de base multiplié par le poids
     public int calculerPrix() {
-        return prixBase * poids; // Le prix est calculé en multipliant le prix de base par le poids
+        return prixBase * poids;
     }
-
 }

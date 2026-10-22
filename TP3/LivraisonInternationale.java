@@ -1,27 +1,34 @@
-public class LivraisonStandard extends Livraison {
+public class LivraisonInternationale extends Livraison {
+    // attribut propre à la livraison internationale
+    private int fraisDouane;
 
     // constructeur
-    public LivraisonStandard(int n, String d, int p, int pr){
-        super(n, d, p, pr); // Appelle le constructeur de la classe parente Livraison
+    public LivraisonInternationale(int numero, String destination, int poids, int prixBase, int fraisDouane) {
+        super(numero, destination, poids, prixBase);
+        this.fraisDouane = fraisDouane;
+    }
+
+    // getter et setter
+    public int getFraisDouane() {
+        return fraisDouane;
+    }
+
+    public void setFraisDouane(int fraisDouane) {
+        this.fraisDouane = fraisDouane;
     }
 
     // méthode afficher()
     @Override
     public void afficher() {
-        System.out.println("Livraison Standard - Numéro: " + getNumero()
-        + ", Destination: " + getDestination() + ", Poids: " + getPoids() + "kg, Prix Base: " + getPrixBase() + "€");
+        System.out.println("Livraison Internationale - Numéro: " + getNumero()
+                + ", Destination: " + getDestination()
+                + ", Poids: " + getPoids() + "kg, Prix Base: " + getPrixBase()
+                + "€, Frais de douane: " + fraisDouane + "€");
     }
 
-<<<<<<< HEAD
+    // méthode calculerPrix() : (prix de base * poids) + frais de douane
     @Override
     public int calculerPrix() {
-        return (prixBase * poids) + 1; // Le prix est calculé en multipliant le prix de base par le poids
+        return getPrixBase() * getPoids() + fraisDouane;
     }
-=======
-    @Override
-    public int calculerPrix() {
-        return prixBase * poids + 1; // Le prix est calculé en multipliant le prix de base par le poids
-    }
->>>>>>> db3bda536f50baf94bf3cb2fa51d350ce9eb7210
-
 }
