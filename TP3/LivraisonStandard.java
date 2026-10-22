@@ -1,34 +1,16 @@
-public class LivraisonStandard {
-    //attributs 
-    private int numero;
-    private String destination;
-    private int poids;
-    private int prixBase;
+public class LivraisonStandard extends Livraison {
 
-    //Constructeur 
-    public LivraisonStandard(int n, string d, int p, int pr){
-        this.numero = n;
-        this.destination =  d;
-        this.poids = p;
-        this.prixBase = pr;
+    // constructeur
+    public LivraisonStandard(int n, String d, int p, int pr){
+        super(n, d, p, pr); // Appelle le constructeur de la classe parente Livraison
     }
 
-    //getters et setters
-    public int getnumero(){
-        return numero;
+    // méthode afficher()
+    @Override
+    public void afficher() {
+        System.out.println("Livraison Standard - Numéro: " + getNumero()
+        + ", Destination: " + getDestination() + ", Poids: " + getPoids() + "kg, Prix Base: " + getPrixBase() + "€");
     }
 
-    public int getdestination(){
-        return destination;
-    }
 
-    public int getpoids(){
-        return poids;
-    }
-
-    public int getprixBase(){
-        return prixBase;
-    }  
-
-    public void setNumero()(int numero)
 }
