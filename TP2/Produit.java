@@ -1,62 +1,52 @@
 public class Produit {
+    // Attributs
     private String reference;
     private String nom;
-    private int prixUnitaire;
+    private int prixUnitaire; // 'double' si besoin 
 
     // Constructeur
-    public Produit(String reference, String nom, int prixUnitaire) {
-        this.reference = reference;
-        this.nom = nom;
-
-        if (prixUnitaire <= 0) {
-            throw new IllegalArgumentException(
-                "Le prix doit être strictement positif."
-            );
+    public Produit(String r, String n, int p) {
+        this.reference = r;
+        this.nom = n;
+        if (p < 0) { // optionnel : boucler 3 fois sur le throw
+            throw new IllegalArgumentException("Le prix unitaire ne peut pas être négatif.");
         }
-
-        this.prixUnitaire = prixUnitaire;
+        this.prixUnitaire = p;
     }
 
-    // Getter
+    // Getters et Setters
     public String getReference() {
         return reference;
     }
 
-    // Setter
-    public void setReference(String reference) {
-        this.reference = reference;
-    }
-
-    // Getter
     public String getNom() {
         return nom;
     }
 
-    // Setter
-    public void setNom(String nom) {
-        this.nom = nom;
-    }
-
-    // Getter
     public int getPrixUnitaire() {
         return prixUnitaire;
     }
 
-    // Setter
-    public void setPrixUnitaire(int prixUnitaire) {
-        if (prixUnitaire <= 0) {
-            throw new IllegalArgumentException(
-                "Le prix doit être strictement positif."
-            );
-        }
+    public void setReference(String reference) {
+        this.reference = reference;
+    }
 
+    public void setNom(String nom) {
+        this.nom = nom;
+    }
+
+    public void setPrixUnitaire(int prixUnitaire) {
+        if (prixUnitaire < 0) {
+            throw new IllegalArgumentException("Le prix unitaire ne peut pas être négatif.");
+        }
         this.prixUnitaire = prixUnitaire;
     }
 
-    // Méthode afficher()
-    public void afficher() {
-        System.out.println("Référence : " + reference);
-        System.out.println("Nom : " + nom);
-        System.out.println("Prix unitaire : " + prixUnitaire + " €");
+    // Méthodes
+    public void afficherProduit() {
+        System.out.println("Référence : " + reference + 
+                           "\nNom : " + nom + 
+                           "\nPrix unitaire : " + prixUnitaire);
     }
+
 }
