@@ -29,4 +29,6 @@ public class LivraisonStandard {
     public int getprixBase(){
         return prixBase;
     }  
+
+    public void setNumero()(int numero)
 }
